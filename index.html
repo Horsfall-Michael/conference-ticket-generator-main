@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Conference ticket generator</title>
+</head>
+<body>
+
+  <!-- Form starts -->
+  <header>
+    <div class="background">
+      <img src="/assets/images/pattern-squiggly-line-top.svg" class="ribbon-top background-img" alt="Background element" >
+      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-top background-img " alt="Background element" >
+      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-middle background-img">
+    </div>
+    <img src="/assets/images/logo-full.svg" alt="logo" class="logo">
+    <h1 class="heading">Your Journey to Coding Conf <br>2025 Starts Here!</h1>
+    <p class="subtext">Secure your spot at next year's biggest coding conference.</p>
+  </header>
+  <main>
+    <form name="Information" id="infoForm" novalidate>
+      <fieldset>
+        <label for="fileInput">Upload Avatar</label>
+        <div class="upload-box" id="uploadBox">
+          <img src="/assets/images/icon-upload.svg" alt="upload icon">
+          <div class="preview">
+            <img id="previewImage">
+          </div>
+          <p>Drag and drop or click to upload</p>
+          <input type="file" id="fileInput" name="picture" accept="image/*" hidden>
+        </div>
+        <p class="upload-info">
+          <span class="information-symbol">i</span>
+          Upload your photo (JPG or PNG, max size: 500KB).
+          <span class="error-message avatar-error">
+            <span class="error-information-symbol">i</span>
+            Please upload a valid image under 500KB
+          </span>
+        </p>
+
+        <p class="input">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" class="input-box" required>
+        </p>
+
+        <p class="input">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" class="input-box" placeholder="example@gmail.com" required>
+          <span class="error-message email-error">
+            <span class="error-information-symbol">i</span>
+            Please enter a valid email
+          </span>
+        </p>
+
+        <p class="input">
+          <label for="username">Github Username</label>
+          <input type="text" name="username" id="username" class="input-box" placeholder="@yourusername" required>
+        </p>
+
+        <button class="generate-ticket-btn" type="submit">Generate My Ticket</button>
+      </fieldset>
+    </form>
+
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://horsfall-michael-portfolio-532e93.netlify.app/">Horsfall Michael</a>.
+    </div>
+  </footer>
+ <script src="script.js"></script>  
+</body>
+</html>

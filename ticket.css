@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+  min-height: 100vh;
+  text-align: center;
+  justify-content: center;
+  background: url("/assets/images/background-mobile.png") center/cover no-repeat;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  overflow-x: hidden; 
+}
+
+/* Decorative layers */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("/assets/images/pattern-lines.svg") top/cover no-repeat;
+  z-index: -1;
+  opacity: 1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: clamp(350px, 40vw, 500px);
+  height: 50vh;
+  background: url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left;
+  background-size: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Background elements */
+.background-img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ribbon-top {
+  position: absolute;
+  top: 50px;
+  left: 68%;
+  width: clamp(120px, 30vw, 350px);
+}
+
+.circle-pattern-top {
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  width: 100px;
+}
+
+.circle-pattern-middle {
+  position: absolute;
+  width: 100px;
+  top: 53%;
+  left: 65%;
+}
+
+.logo {
+  margin-top: 20px;
+  width: 100px;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  margin: 10px 0 10px 0;
+}
+.ticket-header-name {
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ticket-header-subtext {
+  width: 70%;
+  margin: 20px auto;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: 40px;
+  color: hsl(245, 15%, 58%);
+}
+.colored-email{
+  color: hsl(7, 86%, 67%);
+}
+main{
+  margin-top: 100px;
+}
+.ticket{
+  background: url("/assets/images/pattern-ticket.svg") center/contain no-repeat;
+  height: 170px ;
+  aspect-ratio: 2 / 1;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 20px;
+  margin: 20px 20px 0 20px;
+}
+.ticket-logo {
+  width: clamp(150px, 30%, 900px);
+  margin: 0;
+  position: relative;
+  left:-80px;
+  
+}
+
+.ticket-event-date-location {
+  font-size: 0.8rem;
+  color: hsl(245, 15%, 58%);
+  text-align: left;
+  margin-left: 30px;
+}
+
+.ticket-id {
+  font-size: 0.9rem;
+  color: hsl(245, 15%, 58%);
+  transform: rotate(90deg) translate(-10px,-900%);
+  display: inline-block;
+  text-align: right;
+}
+
+.ticket-bottom {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 0.5rem;
+  top: -5px;
+  left:-4px
+}
+
+.preview-img {
+  width: clamp(50px, 12%, 100px);
+  border-radius: 8px;
+}
+
+.ticket-owner-info {
+  font-size: 0.8rem;
+  text-align:left;
+  top:10px;
+  gap: 30px;
+}
+
+.git-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: hsl(244, 22%, 75%);
+  gap: 0.5rem;
+}
+
+.git-info img {
+  width: 20px;
+}
+footer {
+  margin: 5px;
+  color: hsl(245, 15%, 58%);
+  font-size: 0.6rem;
+}
+.attribution a{
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 700px){
+ body{
+  background:  url("/assets/images/background-tablet.png") center/cover no-repeat; ;
+ }
+ .ribbon-top{
+    top: 70px;
+    left: 70%;
+ }
+ .logo{
+  width:30%;
+ }
+ .heading{
+  margin: 30px 0 10px 0;
+ }
+ .ticket-header-subtext{
+  width:45%;
+ }
+ main{
+  display: grid;
+ }
+ .ticket{
+  height: 275px;
+  gap:2rem;
+  margin-bottom: 0;
+ }
+ .ticket-logo{
+  width: 240px;
+  left: -120px;
+  margin-top: 5px
+ }
+ .ticket-event-date-location {
+  font-size: 1.2rem;
+  margin-left: 70px;
+  }
+  .preview-img{
+    width: 15%;
+  }
+  .ticket-owner-info{
+    font-size: 1.5rem;
+  }
+  .git-info{
+    font-size:1rem;
+  }
+  .ticket-id{
+    font-size: 1.2rem;
+    transform: rotate(90deg) translate(-10px, -1050%);
+    display: inline-block;
+    text-align: right;
+  }
+  footer{
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px){
+  body{
+  background:  url("/assets/images/background-desktop.png") center/cover no-repeat ;
+ }
+ .logo{width: 20%
+ }
+ .ticket-header-subtext{
+  width: 30%;
+ }
+ body::after{
+  background: url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left;
+  background-size: 100%;
+ }
+}
