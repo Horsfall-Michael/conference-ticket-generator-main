@@ -3,14 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: "Inconsolata";
   src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: "Inconsolata", monospace;
   min-height: 100vh;
@@ -34,13 +32,12 @@ body::before {
   z-index: -1;
   opacity: 1;
 }
-
 body::after {
   content: "";
   position: absolute;
   bottom: -20px;
   left: 0;
-  width: clamp(350px, 40vw, 500px);
+  width: clamp(250px, 40vw, 500px);
   height: 50vh;
   background: url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left;
   background-size: 100%;
@@ -55,36 +52,31 @@ body::after {
   z-index: -1;
   overflow: hidden;
 }
-
 .ribbon-top {
   position: absolute;
   top: 50px;
   left: 68%;
   width: clamp(120px, 30vw, 350px);
 }
-
 .circle-pattern-top {
   position: absolute;
   top: -50px;
   left: 50px;
   width: 100px;
 }
-
 .circle-pattern-middle {
   position: absolute;
   width: 100px;
   top: 53%;
   left: 65%;
 }
-
 .logo {
   margin-top: 20px;
   width: 100px;
 }
-
 .heading {
-  font-size: clamp(1.5rem, 6vw, 4rem);
-  margin: 10px 0 10px 0;
+  font-size: clamp(1rem, 6vw, 4rem);
+  margin-top: 20px;
 }
 .ticket-header-name {
   background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
@@ -93,20 +85,17 @@ body::after {
 }
 .ticket-header-subtext {
   width: 70%;
-  margin: 20px auto;
-  font-size: clamp(0.75rem, 2vw, 1rem);
+  margin: 10px auto;
+  font-size: clamp(0.5rem, 2vw, 1rem);
   margin-bottom: 40px;
   color: hsl(245, 15%, 58%);
 }
 .colored-email{
   color: hsl(7, 86%, 67%);
 }
-main{
-  margin-top: 100px;
-}
 .ticket{
   background: url("/assets/images/pattern-ticket.svg") center/contain no-repeat;
-  height: 170px ;
+  height: 130px ;
   aspect-ratio: 2 / 1;
   justify-self: center;
   display: flex;
@@ -114,27 +103,29 @@ main{
   justify-content: flex-start;
   gap: 1rem;
   padding: 20px;
-  margin: 20px 20px 0 20px;
+  margin: 50px 20px 0 20px;
 }
 .ticket-logo {
-  width: clamp(150px, 30%, 900px);
+  width: clamp(120px, 30%, 900px);
   margin: 0;
   position: relative;
-  left:-80px;
-  
+  left:-55px;
+  top:-5px;  
 }
 
 .ticket-event-date-location {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: hsl(245, 15%, 58%);
   text-align: left;
-  margin-left: 30px;
+  margin-left: 20px;
+  top:-5px;
+  position:relative;
 }
 
 .ticket-id {
   font-size: 0.9rem;
   color: hsl(245, 15%, 58%);
-  transform: rotate(90deg) translate(-10px,-900%);
+  transform: rotate(90deg) translate(-10px,-700%);
   display: inline-block;
   text-align: right;
 }
@@ -144,12 +135,12 @@ main{
   position: relative;
   align-items: center;
   gap: 0.5rem;
-  top: -5px;
+  top: -25px;
   left:-4px
 }
 
 .preview-img {
-  width: clamp(50px, 12%, 100px);
+  width: clamp(40px, 12%, 100px);
   border-radius: 8px;
 }
 
@@ -174,11 +165,61 @@ main{
 footer {
   margin: 5px;
   color: hsl(245, 15%, 58%);
-  font-size: 0.6rem;
+  font-size: 0.4rem;
 }
 .attribution a{
   color: white;
   text-decoration: none;
+}
+
+@media (min-width: 360px){
+    
+  body::after {
+    width: clamp(350px, 40vw, 500px);
+  }
+
+  /* Background elements */
+  .ribbon-top {
+    width: clamp(150px, 30vw, 350px);
+  }
+  .logo {
+    margin-top: 20px;
+    width: 35%;
+  }
+
+  .heading {
+    font-size: clamp(1.5rem, 6vw, 4rem);
+    margin: 30px 0 10px 0;
+  }
+  .ticket-header-subtext {
+    width: 60%;
+  }
+  .ticket{
+    height: 170px ;
+    margin-top:20%
+  }
+  .ticket-logo {
+    width: clamp(150px, 30%, 900px);
+    left:-80px;  
+  }
+
+  .ticket-event-date-location {
+    font-size: 0.8rem;
+    margin-left: 30px;
+  }
+  .ticket-id {
+    transform: rotate(90deg) translate(-10px,-900%);
+  }
+  .ticket-bottom {
+    top: -5px;
+    left:-4px
+  }
+  .preview-img {
+    width: clamp(50px, 12%, 100px);
+  }
+  footer {
+    font-size: 0.6rem;
+  }
 }
 
 @media (min-width: 700px){
@@ -205,6 +246,7 @@ footer {
   height: 275px;
   gap:2rem;
   margin-bottom: 0;
+  margin-top: 70px;
  }
  .ticket-logo{
   width: 240px;

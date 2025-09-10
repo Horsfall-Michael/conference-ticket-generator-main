@@ -4,6 +4,7 @@
 *{
   margin:0;
   padding:0;
+  box-sizing: border-box;
 }
 @font-face {
   font-family: "Inconsolata";
@@ -20,6 +21,7 @@ body {
   background: url("/assets/images/background-desktop.png") center/cover no-repeat;
   position: relative;
   color:hsl(0, 0%, 100%) ;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -107,18 +109,41 @@ label{
   background-color: hsla(245, 19%, 35%, 0.3);
   font-size: 13px;
   color: hsl(245, 15%, 58%);
-  
+  height: fit-content;
 }
 .upload-box:focus{
   outline: 1px solid hsl(245, 15%, 58%); 
   outline-offset: 2px;
+}
+.upload-box:hover{
+  background-color:hsla(245, 19%, 35%, 0.6);
+}
+.upload-icon{
+  padding: 2px;
+  background-color: hsl(245, 19%, 35%);
+  border-radius: 5px;
+  border: 1px solid hsl(245, 19%, 35%);
+  margin-bottom: 15px;
 }
 .upload-info{
   font-size: 12px;
   color: hsl(245, 15%, 58%);
   margin-top: 5px;
   margin-bottom: 15px;
-
+}
+.image-display{
+  display:none;
+}
+.image-button{
+  margin-top: 10px;
+  padding: 3px 10px;
+  color: hsl(245, 15%, 58%);
+  background-color:hsla(245, 19%, 35%, 0.3);
+  border-radius:5px;
+  border:none;
+}
+.avatar-error{
+  margin-bottom: 15px;
 }
 .error-message{
   font-size: 12px;
@@ -160,8 +185,8 @@ label{
  border-radius:5px;
 }
 .input-box{
-  width: 94%;
-  height: 30px;
+  width: 100%;
+  height: 60px;
   padding: 10px;
   border-radius: 15px;
   border: 2px solid hsl(245, 19%, 35%);
@@ -173,6 +198,9 @@ label{
   outline: 1px solid hsl(245, 15%, 58%); 
   outline-offset: 2px;
 }
+.input-box:hover{
+  background-color:hsla(245, 19%, 35%, 0.6);
+}
 .circle-pattern-middle{
   width:150px;
   top:53%;
@@ -183,7 +211,7 @@ label{
   padding: 15px;
   font-size: 20px;
   color:hsl(248, 70%, 10%);
-  background-color: hsl(7, 71%, 60%);
+  background-color: hsl(7, 88%, 67%);
   border: none;
   border-radius: 15px;
   font-family: "Inconsolata";
@@ -192,6 +220,9 @@ label{
 .generate-ticket-btn:focus{
   outline: 1px solid hsl(245, 15%, 58%); 
   outline-offset: 2px;
+}
+.generate-ticket-btn:hover{
+background-color: hsl(7, 71%, 60%);  
 }
 footer{
   margin: 20px 0;
@@ -218,7 +249,7 @@ footer{
   }
   .ribbon-top{
     top: 95px;
-    left: 58%;
+    left: 54%;
   }
   body::before{
    opacity: 1;
@@ -227,7 +258,7 @@ footer{
     font-size: 30px;
   }
   .upload-box{
-    height: 90px;
+    min-height: 160px;
     font-size: 15px;
     align-content: center;
     align-items: center;
@@ -237,8 +268,6 @@ footer{
     margin-bottom: 25px;
   }
   .input-box{
-    width: 97%;
-    height: 35px;
     margin-bottom: 40px;
     font-size: 20px;
   }
@@ -254,7 +283,7 @@ footer{
   height: 900px;
   background: url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left;
   background-size: 55%;
-  bottom: -19px;
+  bottom: 0px;
 }
   footer{
     margin-top: 100px;
@@ -287,7 +316,6 @@ footer{
     font-size: 20px;
   }
   .upload-box{
-    height: 90px;
     font-size: 13px;
     align-content: center;
   }
@@ -299,8 +327,7 @@ footer{
     width:100px;
   }
   .input-box{
-    width: 94%;
-    height:20px;
+    height:50px;
     margin-bottom: 25px;
     font-size: 16px;
   }
