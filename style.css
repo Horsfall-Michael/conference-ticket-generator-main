@@ -16,9 +16,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-  overflow-x:hidden;
-}
 
 @font-face {
   font-family: "Inconsolata";
@@ -36,7 +33,6 @@ body {
   background: url("/assets/images/background-desktop.png") center/cover no-repeat;
   position: relative;
   color: var(--color-white);
-  overflow: hidden;
 }
 
 body::before {
@@ -54,9 +50,9 @@ body::before {
 body::after {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -35vh;
   left: 0;
-  width: 720px;
+  width: 50%;
   height: 500px;
   background: url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left;
   background-size: 100%;
@@ -428,12 +424,21 @@ footer {
   }
 
   body::after {
-    height: 700px;
-    background-size: 50%;
+    bottom:-9vh;
+    height: 500px;
+    width: 250px;
+    background-size: 100%;
   }
 
   footer {
-    margin-top: 100px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 10px;
   }
+}
+
+@media (max-width: 380px) {
+  body::after {
+    bottom:-22vh;  
+  }
+  
 }
