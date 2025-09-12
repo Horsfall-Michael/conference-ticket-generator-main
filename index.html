@@ -5,73 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" id="css" href="style.css">
+  <title>Frontend Mentor | Conference Ticket Generator</title>
 </head>
 <body>
 
-  <!-- Form starts -->
   <header>
     <div class="background">
-      <img src="/assets/images/pattern-squiggly-line-top.svg" class="ribbon-top background-img" alt="Background element" >
-      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-top background-img " alt="Background element" >
-      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-middle background-img">
+      <img src="/assets/images/pattern-squiggly-line-top.svg" class="ribbon-top background-img" alt="Background element">
+      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-top background-img" alt="Background element">
+      <img src="/assets/images/pattern-circle.svg" class="circle-pattern-middle background-img" alt="">
     </div>
-    <img src="/assets/images/logo-full.svg" alt="logo" class="logo">
-    <h1 class="heading">Your Journey to Coding Conf <br>2025 Starts Here!</h1>
-    <p class="subtext">Secure your spot at next year's biggest coding conference.</p>
+    <img src="/assets/images/logo-full.svg" alt="Logo" class="logo">
   </header>
+
   <main>
-    <form name="Information" id="infoForm" novalidate>
-      <fieldset>
-        <label for="fileInput">Upload Avatar</label>
-        <div class="upload-box" id="uploadBox">
-          <img src="/assets/images/icon-upload.svg" alt="upload icon">
-          <div class="preview">
-            <img id="previewImage">
+    <!-- Intro Section -->
+    <section aria-labelledby="intro-heading">
+      <h1 class="heading" id="intro-heading">
+        Your Journey to Coding Conf <br>2025 Starts Here!
+      </h1>
+      <p class="subtext">Secure your spot at next year's biggest coding conference.</p>
+    </section>
+
+    <!-- Form Section -->
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading" class="visually-hidden">Ticket Registration Form</h2>
+      
+      <form name="Information" id="infoForm" novalidate>
+        <fieldset>
+          <legend class="visually-hidden">User Information</legend>
+
+          <!-- Avatar Upload -->
+          <label for="fileInput">Upload Avatar</label>
+          <div class="upload-box" id="uploadBox">
+            <div class="upload-image-section">
+              <img src="/assets/images/icon-upload.svg" alt="Upload icon">
+              <p>Drag and drop or click to upload</p>
+              <input type="file" id="fileInput" name="picture" accept="image/*" hidden>
+            </div>
+            <div class="image-display">
+              <div class="preview">
+                <img id="previewImage" alt="Image preview">
+              </div>
+              <button type="button" class="image-btn js-removeImage" aria-label="Remove image">Remove</button>
+              <button type="button" class="image-btn js-changeImage" aria-label="Change image">Change</button>
+            </div>
           </div>
-          <p>Drag and drop or click to upload</p>
-          <input type="file" id="fileInput" name="picture" accept="image/*" hidden>
-        </div>
-        <p class="upload-info">
-          <span class="information-symbol">i</span>
-          Upload your photo (JPG or PNG, max size: 500KB).
-          <span class="error-message avatar-error">
-            <span class="error-information-symbol">i</span>
-            Please upload a valid image under 500KB
-          </span>
-        </p>
+          <p class="upload-info">
+            <span class="information-symbol" aria-hidden="true">i</span>
+            Upload your photo (JPG or PNG, max size: 500KB).
+            <span class="error-message avatar-error" aria-live="polite">
+              <span class="error-information-symbol" aria-hidden="true">i</span>
+              Please upload a valid image under 500KB
+            </span>
+          </p>
 
-        <p class="input">
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" class="input-box" required>
-        </p>
 
-        <p class="input">
-          <label for="email">Email Address</label>
-          <input type="email" name="email" id="email" class="input-box" placeholder="example@gmail.com" required>
-          <span class="error-message email-error">
-            <span class="error-information-symbol">i</span>
-            Please enter a valid email
-          </span>
-        </p>
+          <div class="input">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" class="input-box" required>
+          </div>
 
-        <p class="input">
-          <label for="username">Github Username</label>
-          <input type="text" name="username" id="username" class="input-box" placeholder="@yourusername" required>
-        </p>
 
-        <button class="generate-ticket-btn" type="submit">Generate My Ticket</button>
-      </fieldset>
-    </form>
+          <div class="input">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" class="input-box" placeholder="example@gmail.com" required>
+            <span class="error-message email-error" aria-live="polite">
+              <span class="error-information-symbol" aria-hidden="true">i</span>
+              Please enter a valid email
+            </span>
+          </div>
 
+
+          <div class="input">
+            <label for="username">GitHub Username</label>
+            <input type="text" name="username" id="username" class="input-box" placeholder="@yourusername" required>
+          </div>
+
+          <button class="generate-ticket-btn" type="submit">Generate My Ticket</button>
+        </fieldset>
+      </form>
+    </section>
   </main>
+
   <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    <address class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="https://horsfall-michael-portfolio-532e93.netlify.app/">Horsfall Michael</a>.
-    </div>
+    </address>
   </footer>
- <script src="script.js"></script>  
+  
+  <script src="script.js"></script>  
 </body>
 </html>

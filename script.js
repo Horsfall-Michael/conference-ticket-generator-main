@@ -1,11 +1,11 @@
 const uploadBox = document.querySelector('#uploadBox');
-const fileInput = document.querySelector('#chooseAvatar');
+const fileInput = document.querySelector('#fileInput');
 const previewImage = document.getElementById('previewImage');
 const avatarError = document.querySelector('.avatar-error');
 const emailInput = document.getElementById('email');
 const emailError = document.querySelector('.email-error');
 const form = document.getElementById('infoForm');
-const uploadInstructions = document.querySelector('.upload-instructions');
+const uploadInstructions = document.querySelector('.upload-image-section');
 const imageDisplay = document.querySelector('.image-display');
 const uploadInfo = document.querySelector('.upload-info');
 const removeImageBtn = document.querySelector('.js-removeImage');
@@ -89,8 +89,6 @@ fileInput.addEventListener('change', () => {
   if (file) validateAndPreviewFile(file);
 });
 
-
-
 removeImageBtn.addEventListener('click', () => {
   resetFileInput();
   hidePreview();
@@ -129,12 +127,11 @@ form.addEventListener('submit', (e) => {
 
   if (!valid) return;
 
-  // ✅ Get form data
+  // Get form data and Pass to ticket generator
   const name = document.getElementById('name').value;
   const email = emailInput.value;
   const username = document.getElementById('username').value;
 
-  // ✅ Pass to ticket generator
   generateTicket({ name, email, username, avatar: previewImage.src });
 });
 
@@ -157,7 +154,6 @@ function generateTicketId() {
   return id.join('-');
 }
 
-// Ticket generation function (unchanged, can be moved to separate module)
 function generateTicket({ name, email, username, avatar }) {
   ticketId = generateTicketId();
   const ticketHTML = `
@@ -183,6 +179,6 @@ function generateTicket({ name, email, username, avatar }) {
       </div>
     </div>
   `;
-  document.getElementById('main').innerHTML = ticketHTML;
+  document.querySelector('main').innerHTML = ticketHTML;
   document.getElementById('css').href = 'ticket.css';
 }
