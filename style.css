@@ -277,12 +277,14 @@ label {
 }
 
 footer {
+  font-size: 0.75rem;
   margin: 20px 0;
   color: var(--color-gray-light);
 }
 .attribution a{
   color: white;
   text-decoration: none;
+  
 }
 
 @media (max-width: 1024px) {
