@@ -201,7 +201,8 @@ footer {
   }
 
   .ribbon-top {
-    width: clamp(150px, 30vw, 350px);
+    top:5px;
+    width: clamp(120px, 30vw, 350px);
   }
 
   .logo {
