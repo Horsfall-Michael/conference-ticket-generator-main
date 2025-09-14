@@ -13,24 +13,28 @@ const changeImageBtn = document.querySelector('.js-changeImage');
 
 
 
-function showError() {
-  uploadBox.classList.add('error');
-  avatarError.classList.add('active');
-  avatarError.style.display = 'block';
-  setTimeout
-  previewImage.style.display = 'none';
+function showUploadError() {
+  uploadInfo.style.display = 'none';
+  avatarError.style.display ='block';
+
+  setTimeout(() => {
+    clearError();
+  }, 7000);
 }
 
 function clearError() {
+
   uploadBox.classList.remove('error');
   avatarError.classList.remove('active');
-}
+  avatarError.style.display = 'none';
 
+ uploadInfo.style.display = 'block'
+  previewImage.style.display = 'block';
+}
 
 function showPreview() {
   uploadInstructions.style.display = 'none';
   imageDisplay.style.display = 'block';
-  uploadInfo.style.display = 'block';
 }
 
 function hidePreview() {
@@ -40,7 +44,6 @@ function hidePreview() {
   uploadInstructions.style.display = 'block';
   uploadBox.classList.remove('error');
   avatarError.classList.remove('active');
-  uploadInfo.style.display = 'block';
 }
 
 function validateFile(file) {
@@ -49,7 +52,7 @@ function validateFile(file) {
 
 function validateAndPreviewFile(file) {
   if (!validateFile(file)) {
-    showError();
+    showUploadError();
     hidePreview();
     return;
   }
@@ -105,37 +108,40 @@ changeImageBtn.addEventListener('click', () => {
 
 // Form validation on submit
 form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent page refresh
+  e.preventDefault(); 
 
   let valid = true;
+  const file = fileInput.files[0];
 
-  // Validate email
   if (!emailInput.validity.valid) {
     emailInput.parentElement.classList.add('error');
     emailError.classList.add('active');
     valid = false;
+
+    setTimeout(() => {
+      emailInput.parentElement.classList.remove('error');
+      emailError.classList.remove('active');
+    }, 7000);
   } else {
     emailInput.parentElement.classList.remove('error');
     emailError.classList.remove('active');
   }
 
-  // Validate file
-  const file = fileInput.files[0];
   if (!file || !validateFile(file)) {
-    uploadInfo.style.display = 'none';
-    showError();
+    showUploadError();
     valid = false;
   }
 
-  if (!valid) return;
+  if (!valid) return; 
 
-  // Get form data and Pass to ticket generator
+
   const name = document.getElementById('name').value;
   const email = emailInput.value;
   const username = document.getElementById('username').value;
 
   generateTicket({ name, email, username, avatar: previewImage.src });
 });
+
 
 
 function generateTicketId() {
