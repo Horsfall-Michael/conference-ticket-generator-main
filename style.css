@@ -16,7 +16,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: "Inconsolata";
   src: url("/assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
@@ -67,9 +66,13 @@ body::before {
 }
 
 .ribbon-bottom{
-  max-width: 50%;
-  position: absolute;
+  background-image: url(./assets/images/pattern-squiggly-line-bottom-desktop.svg);
+  max-width: 80%;
+  background-position: left bottom;
   top:55%;
+  bottom: -70px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 main {
@@ -183,6 +186,7 @@ label {
 }
 
 .avatar-error {
+  display: none;
   margin-bottom: 15px;
 }
 
@@ -270,7 +274,7 @@ label {
 
 footer {
   font-size: 0.75rem;
-  margin: 20px 0;
+  padding: 20px 0;
   color: var(--color-gray-light);
 }
 .attribution a{
@@ -342,7 +346,9 @@ footer {
   }
 
   .ribbon-bottom{
+    background-image: url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
     top:77%;
+    bottom:0;
   }
 }
 
@@ -409,7 +415,8 @@ footer {
   }
 
   .ribbon-bottom{
-    top:90%;
+    top:50%;
+    bottom:-10%;
   }
 
   footer {

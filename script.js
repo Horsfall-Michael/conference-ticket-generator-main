@@ -16,6 +16,8 @@ const changeImageBtn = document.querySelector('.js-changeImage');
 function showError() {
   uploadBox.classList.add('error');
   avatarError.classList.add('active');
+  avatarError.style.display = 'block';
+  setTimeout
   previewImage.style.display = 'none';
 }
 

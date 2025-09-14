@@ -42,19 +42,6 @@ body::before {
   opacity: 1;
 }
 
-body::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: clamp(250px, 40vw, 500px);
-  height: 50vh;
-  background: url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left;
-  background-size: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
 .background-img {
   position: absolute;
   inset: 0;
@@ -82,7 +69,15 @@ body::after {
   top: 53%;
   left: 65%;
 }
-
+.ribbon-bottom{
+  background-image: url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
+  top:50%;
+  bottom:-10%;
+  max-width: 80%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .logo {
   margin-top: 20px;
   width: 100px;
@@ -196,10 +191,6 @@ footer {
 /* Responsive styles */
 
 @media (min-width: 360px) {
-  body::after {
-    width: clamp(350px, 40vw, 500px);
-  }
-
   .ribbon-top {
     top:5px;
     width: clamp(120px, 30vw, 350px);
@@ -316,11 +307,24 @@ footer {
   footer {
     font-size: 0.9rem;
   }
+  .ribbon-bottom{
+    background-image: url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
+    top:80%;
+    bottom:0;
+  }
 }
 
 @media (min-width: 1024px) {
   body {
     background: url("/assets/images/background-desktop.png") center/cover no-repeat;
+  }
+  .ribbon-bottom{
+    background-image: url(./assets/images/pattern-squiggly-line-bottom-desktop.svg);
+    background-size:750px;
+    height: 80%;
+    width:80%;
+    top:20%;
+    bottom:0;
   }
 
   .logo {
@@ -329,10 +333,5 @@ footer {
 
   .ticket-header-subtext {
     width: 30%;
-  }
-
-  body::after {
-    background: url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left;
-    background-size: 100%;
   }
 }
